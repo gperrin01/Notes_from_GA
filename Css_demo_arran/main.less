@@ -1,0 +1,165 @@
+@page-color:        #ff0000; // sea blue
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+html,body,ul,ol,li,form,fieldset,legend{margin:0;padding:0}h1,h2,h3,h4,h5,h6,p{margin-top:0}fieldset,img{border:0}legend{color:#000}li{list-style:none}sup{vertical-align:text-top}sub{vertical-align:text-bottom}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;vertical-align:top;font-weight:400}input,textarea,select{font-size:110%;line-height:1.1}abbr,acronym{border-bottom:.1em dotted;cursor:help}
+
+html { height: 100%; }
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #3a3a3a;
+	background: #eeeeee;
+	padding: 0px;
+}
+
+.hidden {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+nav {
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.nav-list {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	text-transform: capitalize;
+
+	li {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
+	a {
+		color: #3a3a3a;
+		
+		margin: 0;
+		text-decoration: none;
+		vertical-align: middle;
+		line-height: 80px;
+		height: 80px;
+		width: 100%;
+		display: block;
+		text-align: center;
+
+		span {
+			opacity: 0;
+			margin:0 1em;
+
+		}
+	}
+
+	.active a:after {
+
+	}
+
+	a:hover, a:focus {
+		animation-duration: 200ms;
+		animation-name: fade;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+}
+    
+@keyframes fade {
+	from {
+		background-color: #ffffff;
+	}
+
+	75% {
+		font-size: 100%
+	}
+      
+	to {
+		background-color: #f1f1f1;
+		font-size: 125%;
+	}
+}
+
+a:hover span {
+	animation-duration: 200ms;
+	animation-name: display-price;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes display-price {
+	from {
+		opacity:0;
+	}
+	75% {
+		opacity:0;	
+	}
+	to {
+		opacity:1;
+	}
+}
+
+.button {
+	background: #26ae90;
+	border-radius: 3px;
+	padding: 12px 32px;
+	color: #FFF;
+	line-height:28px;
+	font-size:16px;
+	text-align:center;
+	-webkit-font-smoothing: antialiased;
+	margin: 150px 250px;
+	text-decoration: none;
+	position: absolute;
+
+	animation-duration: 800ms;
+	animation-name: pulse2;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+
+}
+
+.button {
+	animation: 
+    pulse 1000ms linear infinite alternate, 
+    pulse2 500ms linear infinite alternate;
+    animation-timing-function: cubic-bezier(0, -0.19, 1, -0.27);
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		transform: translate(-400px, 0);
+	}
+	to {
+		transform: scale(1.25);
+		transform: translate(-50px, 0);
+	}
+}
+
+
+
+@keyframes pulse2 {
+	from {
+		-webkit-box-shadow: 0 0 9px #37FACF;
+	}
+	to {
+		-webkit-box-shadow: 0 0 18px #20947B;	
+	}
+}
+
+
+
+
+/*transform: translate(-400px,0);*/
+
+
